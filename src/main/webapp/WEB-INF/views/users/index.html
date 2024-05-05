@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of user</title>
+</head>
+<body>
+<a href="/users/new">Create new user</a>
+<hr/>
+<br/>
+<div th:each="user : ${users}">
+    <a th:href="@{'/users/' + ${user.getId()}}"
+       th:text="${user.getName()}">user</a>
+</div>
+</body>
+</html>
